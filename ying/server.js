@@ -20,16 +20,7 @@ let server = http.createServer(function(request, response) {
         response.setHeader('Content-type', 'text/html;charset=utf-8');
         response.write(fs.readFileSync('./public/index.html'))
         response.end()
-    } else if (path === "/style") {
-        response.statusCode = 200;
-        response.setHeader('Content-type', 'text/css;charset=utf-8');
-        response.write(`
-            body {
-                color:red;
-            }
-        `)
-        response.end();
-    } else if (path === '/ying.js') {
+    }else if (path === '/ying.js') {
         response.statusCode = 200;
         response.setHeader('Content-type', 'text/js;charset=utf-8');
         response.write(fs.readFileSync('public/ying.js'))
